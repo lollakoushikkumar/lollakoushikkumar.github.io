@@ -9,15 +9,45 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f5f5f5;
+            background: #e9ecf3;
             color: #222;
+            transition: 0.3s;
+            scroll-behavior: smooth;
+        }
+
+        /* DARK MODE */
+        .dark-mode {
+            background: #121212;
+            color: #eee;
+        }
+        .dark-mode section {
+            background: #1f1f1f;
+            box-shadow: 0 4px 12px rgba(255,255,255,0.08);
+        }
+        .dark-mode header {
+            background: linear-gradient(135deg, #000, #222);
+        }
+        .dark-mode .skills span {
+            background: #333;
         }
 
         header {
-            background: #222;
+            background: linear-gradient(135deg, #222, #444);
             color: white;
-            padding: 40px 20px;
+            padding: 60px 20px;
             text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        /* PROFILE PHOTO */
+        .profile-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            margin-top: -20px;
         }
 
         section {
@@ -25,13 +55,17 @@
             margin: auto;
             background: white;
             padding: 30px;
-            margin-top: 20px;
-            border-radius: 10px;
+            margin-top: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: 0.3s;
         }
 
         h2 {
             border-left: 5px solid #222;
-            padding-left: 10px;
+            padding-left: 12px;
+            font-size: 24px;
+            margin-bottom: 10px;
         }
 
         .skills span {
@@ -41,31 +75,87 @@
             padding: 8px 15px;
             border-radius: 8px;
             margin: 5px;
+            font-size: 14px;
+        }
+
+        .project-card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 15px;
+            transition: 0.3s;
+            background: #fafafa;
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+        }
+
+        /* DARK MODE TOGGLE BUTTON */
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background: #222;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        .toggle-btn:hover {
+            background: #444;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
-            margin-top: 20px;
+            padding: 25px;
+            margin-top: 30px;
             background: #222;
             color: white;
+            letter-spacing: 1px;
         }
     </style>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+
 </head>
 <body>
+
+<div class="toggle-btn" onclick="toggleDarkMode()">🌙 Dark Mode</div>
 
 <header>
     <h1>Lolla Koushik Kumar</h1>
     <p>B.Sc AI Student • Andhra Loyola College, Vijayawada</p>
-    <p>Interested in Data Science • Machine Learning • Data Analysis</p>
+    <p>Data Science • Machine Learning • Artificial Intelligence</p>
+
+    <!-- ✅ YOUR PROFILE PHOTO EMBEDDED HERE -->
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAzcAAAMzCAYAAACbQOzMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQA..." 
+    alt="Profile Photo" class="profile-photo">
 </header>
 
 <section>
     <h2>About Me</h2>
     <p>
-        Hello! I am <b>Lolla Koushik Kumar</b>, currently studying 
-        <b>B.Sc Artificial Intelligence</b> at Andhra Loyola College, Vijayawada.
-        I am passionate about <b>Data Science, Machine Learning, and Data Analysis</b>.
+        I am <b>Lolla Koushik Kumar</b>, a B.Sc Artificial Intelligence student passionate about 
+        <b>Data Science, Machine Learning, and Artificial Intelligence</b>. I enjoy working with 
+        data, identifying insights, and building intelligent models that create real impact.
+    </p>
+
+    <p>
+        My focus is on continuous learning, hands-on practice, and understanding how AI can solve 
+        real-world problems. I regularly explore new tools, datasets, and technologies to strengthen 
+        my analytical and technical skills. 
+    </p>
+
+    <p>
+        My goal is to become a strong <b>Data Scientist or AI Engineer</b> and contribute to 
+        meaningful, innovative, and impactful AI-driven solutions.
     </p>
 </section>
 
@@ -73,18 +163,35 @@
     <h2>Skills</h2>
     <div class="skills">
         <span>Python</span>
-        <span>Data Analysis</span>
         <span>Machine Learning</span>
-        <span>Java (Basics)</span>
-        <span>HTML (Basics)</span>
-        <span>CSS (Basics)</span>
-        <span>JavaScript (Basics)</span>
+        <span>Data Analysis</span>
+        <span>Artificial Intelligence</span>
+        <span>Data Visualization</span>
+        <span>Problem Solving</span>
     </div>
 </section>
 
 <section>
     <h2>Projects</h2>
-    <p>(You can add your projects later.)</p>
+
+    <div class="project-card">
+        <h3>📌 Project Title 1</h3>
+        <p>Describe your project here. Explain the purpose, what you built, and the approach used.</p>
+        <p><b>Tools:</b> Python, Machine Learning</p>
+    </div>
+
+    <div class="project-card">
+        <h3>📌 Project Title 2</h3>
+        <p>Describe another project. Highlight the problem you solved and what skills you applied.</p>
+        <p><b>Tools:</b> Python, Data Analysis</p>
+    </div>
+
+    <div class="project-card">
+        <h3>📌 Project Title 3</h3>
+        <p>Add your third project here. Keep it clear and simple for viewers.</p>
+        <p><b>Tools:</b> Python, AI</p>
+    </div>
+
 </section>
 
 <section>
